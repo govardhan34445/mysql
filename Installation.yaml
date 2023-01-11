@@ -1,0 +1,43 @@
+Installing MySQL on your AWS EC2 instance.
+sudo apt update
+sudo apt install mysql-server
+
+Check status of mysql server
+sudo systemctl status mysql
+
+Create user and set password in mysql
+
+sudo mysql
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'your_password_here';
+
+FLUSH PRIVILEGES;
+
+exit
+
+Login as root user into mysql database
+
+sudo mysql -u root -p
+
+Creating dummy database in mysql
+
+CREATE DATABASE mysql_test;
+
+
+Switch to databse that you created recently above
+
+USE mysql_test;
+
+Create table using below command and define varible and values.
+
+CREATE TABLE test_table1 (id INT, name VARCHAR(45));
+
+Instert dummy database into table
+
+INSERT INTO test_table1 VALUES(1, 'Joe'), (2, 'Jane'), (3, 'Jack'), (4, 'Jessica');
+
+List the data using below command
+
+SELECT * FROM test_table1;
+
+
